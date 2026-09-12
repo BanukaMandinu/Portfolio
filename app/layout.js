@@ -47,16 +47,20 @@ const THEME_INIT_SCRIPT = `
   (function () {
     try {
       var stored = localStorage.getItem('phosphor');
-      if (stored === 'green') {
+      if (stored === 'white') {
+        document.documentElement.removeAttribute('data-phosphor');
+      } else {
         document.documentElement.setAttribute('data-phosphor', 'green');
       }
-    } catch (e) {}
+    } catch (e) {
+      document.documentElement.setAttribute('data-phosphor', 'green');
+    }
   })();
 `;
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${vt323.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${vt323.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning data-phosphor="green">
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>
