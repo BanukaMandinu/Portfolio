@@ -4,6 +4,7 @@ export const education = [
     title: 'BEng (Hons) in Software Engineering',
     org: 'University of Westminster',
     date: 'Sep 2022 — Sep 2026',
+    badge: 'Graduated',
     description:
       'Completed specialized coursework in Machine Learning, Model Training, Computer Vision, Concurrent Programming, Advanced Software Architecture, and Web Technologies.',
     tags: ['Model Training', 'Machine Learning', 'Software Engineering', 'Web Technologies'],

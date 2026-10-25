@@ -25,6 +25,43 @@ const toPoints = (text) =>
     .map((s) => s.trim())
     .filter(Boolean);
 
+// One card per entry; cards stick and stack as you scroll (see .stack in globals.css).
+function Timeline({ items }) {
+  return (
+    <div className="stack">
+      {items.map((item, i) => {
+        const badge = item.status === 'active' ? 'Current' : item.badge;
+        return (
+          <article className="job" key={item.id} style={{ '--i': i }}>
+            <div className="job-meta">
+              <span className="job-date">{item.date}</span>
+              {badge && (
+                <span className={`live ${item.status === 'active' ? '' : 'done'}`}>
+                  <i /> {badge}
+                </span>
+              )}
+            </div>
+            <div className="job-body">
+              <h3>{item.title}</h3>
+              <p className="job-org">{item.org}</p>
+              <ul className="points">
+                {toPoints(item.description).map((p) => (
+                  <li key={p}>{p}</li>
+                ))}
+              </ul>
+              <div className="tags">
+                {item.tags.map((t) => (
+                  <span key={t}>{t}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  );
+}
+
 function SectionHead({ num, label, title, children }) {
   return (
     <Reveal className="sec-head">
@@ -91,44 +128,14 @@ export default function Home() {
         <div className="container">
           <SectionHead num="02" label="Experience" title={<span id="exp-h">Where I&apos;ve <em>worked</em>.</span>} />
 
-          <div className="stack">
-            {experience.map((job, i) => (
-              <article className="job" key={job.id} style={{ '--i': i }}>
-                <div className="job-meta">
-                  <span className="job-date">{job.date}</span>
-                  {job.status === 'active' && <span className="live"><i /> Current</span>}
-                </div>
-                <div className="job-body">
-                  <h3>{job.title}</h3>
-                  <p className="job-org">{job.org}</p>
-                  <ul className="points">
-                    {toPoints(job.description).map((p) => (
-                      <li key={p}>{p}</li>
-                    ))}
-                  </ul>
-                  <div className="tags">
-                    {job.tags.map((t) => (
-                      <span key={t}>{t}</span>
-                    ))}
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <Timeline items={experience} />
 
-          <Reveal className="edu">
-            <h3 className="edu-title">Education</h3>
-            <div className="edu-grid">
-              {education.map((e) => (
-                <article key={e.id} className="card edu-card">
-                  <span className="job-date">{e.date}</span>
-                  <h4>{e.title}</h4>
-                  <p className="job-org">{e.org}</p>
-                  <p>{e.description}</p>
-                </article>
-              ))}
-            </div>
+          <Reveal className="sec-head sub">
+            <p className="sec-label"><span>↳</span> Education</p>
+            <h2>Where I <em>studied</em>.</h2>
           </Reveal>
+
+          <Timeline items={education} />
         </div>
       </section>
 

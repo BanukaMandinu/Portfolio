@@ -228,8 +228,12 @@ strong { font-weight: 600; }
 .stack { display: grid; gap: 1.5rem; }
 .job { position: sticky; top: calc(5.5rem + var(--i) * 1.6rem); display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: clamp(1.2rem, 4vw, 3.5rem); padding: clamp(1.5rem, 4vw, 3rem); background: var(--card); border: 1px solid var(--ink); border-radius: 32px; box-shadow: 0 -18px 40px -24px rgba(0, 0, 0, 0.25); }
 .job-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+.sec-head.sub { margin: clamp(4rem, 9vw, 7rem) 0 clamp(1.8rem, 4vw, 3rem); }
+.sec-head.sub h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); }
 .job-date { font: 500 0.85rem var(--font-mono), monospace; color: var(--muted); }
 .live { display: inline-flex; align-items: center; gap: 0.5rem; font: 500 0.75rem var(--font-mono), monospace; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.3rem 0.7rem; border-radius: 99px; background: color-mix(in srgb, #28c840 18%, transparent); color: var(--ink); }
+.live.done { background: color-mix(in srgb, var(--accent) 16%, transparent); }
+.live.done i { background: var(--accent); animation: none; }
 .live i { width: 7px; height: 7px; border-radius: 50%; background: #28c840; animation: pulse 1.6s infinite; }
 .job h3 { font-size: clamp(1.5rem, 3vw, 2.3rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
 .job-org { color: var(--accent); font-weight: 500; margin-top: 0.4rem; }
@@ -239,17 +243,10 @@ strong { font-weight: 600; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; }
 .tags span { padding: 0.3rem 0.85rem; border: 1px solid var(--line); border-radius: 99px; font-size: 0.85rem; font-weight: 500; }
 
-.edu { margin-top: clamp(4rem, 8vw, 6.5rem); }
-.edu-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 1.2rem; }
-.edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-.edu-card { display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.95rem; color: var(--muted); }
-.edu-card h4 { font-size: 1.25rem; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
-.edu-card .job-org { margin: 0; }
 
 @media (max-width: 900px) {
   .job { position: static; grid-template-columns: 1fr; }
   .job-meta { flex-direction: row; align-items: center; flex-wrap: wrap; }
-  .edu-grid { grid-template-columns: 1fr; }
 }
 
 /* ───────── Work index ───────── */
