@@ -1,20 +1,8 @@
-import {
-  AiIcon,
-  PhoneBrrIcon,
-  ConcurrentScenarioIcon,
-  LanguagesIcon,
-  CinemaIcon,
-  TraditionIcon,
-  ShoppingCartIcon,
-  CreditCalcIcon,
-  QaIcon,
-} from '@/components/icons';
-
 export const projects = [
   {
     id: 'project-bdd-test-generator',
+    category: 'qa',
     title: 'BDD Test Generator',
-    Icon: QaIcon,
     repoUrl: 'https://github.com/BanukaMandinu/BDD-Test-Generator-',
     repoLabel: 'View BDD Test Generator repository on GitHub',
     description:
@@ -23,8 +11,8 @@ export const projects = [
   },
   {
     id: 'project-sketchmri',
+    category: 'ai',
     title: 'SketchMRI',
-    Icon: AiIcon,
     repoUrl: 'https://github.com/BanukaMandinu/SketchMRI',
     repoLabel: 'View SketchMRI repository on GitHub',
     description:
@@ -33,8 +21,8 @@ export const projects = [
   },
   {
     id: 'project-phonebrr',
+    category: 'web',
     title: 'Phone Brr',
-    Icon: PhoneBrrIcon,
     repoUrl: 'https://github.com/BanukaMandinu/Phone-Brr',
     repoLabel: 'View Phone-Brr repository on GitHub',
     description:
@@ -43,8 +31,8 @@ export const projects = [
   },
   {
     id: 'project-concurrent-scenario',
+    category: 'java',
     title: 'Concurrent Transaction Simulator',
-    Icon: ConcurrentScenarioIcon,
     repoUrl: 'https://github.com/BanukaMandinu/ConcurrentProgramming_Scenario_2',
     repoLabel: 'View Concurrent Scenario 2 on GitHub',
     description:
@@ -53,8 +41,8 @@ export const projects = [
   },
   {
     id: 'project-concurrency-suite',
+    category: 'java',
     title: 'Concurrent Programming Engine',
-    Icon: LanguagesIcon,
     repoUrl: 'https://github.com/BanukaMandinu/Concurrent-Programming',
     repoLabel: 'View Concurrent Programming on GitHub',
     description:
@@ -63,8 +51,8 @@ export const projects = [
   },
   {
     id: 'project-cinema',
+    category: 'java',
     title: 'Cinema Booking System',
-    Icon: CinemaIcon,
     repoUrl: 'https://github.com/BanukaMandinu/Cinema-Booking-system',
     repoLabel: 'View Cinema Booking System on GitHub',
     description:
@@ -73,8 +61,8 @@ export const projects = [
   },
   {
     id: 'project-tradition',
+    category: 'web',
     title: 'Sri Lankan Cultural Portal',
-    Icon: TraditionIcon,
     repoUrl: 'https://github.com/BanukaMandinu/website-for-sri-lankan-tradition-',
     repoLabel: 'View Sri Lankan Tradition Website on GitHub',
     description:
@@ -83,8 +71,8 @@ export const projects = [
   },
   {
     id: 'project-shoppingcart',
+    category: 'java',
     title: 'Shopping Cart & Inventory Manager',
-    Icon: ShoppingCartIcon,
     repoUrl: 'https://github.com/BanukaMandinu/Shoppingcart-Manager',
     repoLabel: 'View Shopping Cart Manager on GitHub',
     description:
@@ -93,8 +81,8 @@ export const projects = [
   },
   {
     id: 'project-creditcalc',
+    category: 'python',
     title: 'Credit & Loan Calculator',
-    Icon: CreditCalcIcon,
     repoUrl: 'https://github.com/BanukaMandinu/credit-calculator',
     repoLabel: 'View Credit Calculator on GitHub',
     description:

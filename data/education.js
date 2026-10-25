@@ -4,9 +4,8 @@ export const education = [
     title: 'BEng (Hons) in Software Engineering',
     org: 'University of Westminster',
     date: 'Sep 2022 — Sep 2026',
-    status: 'active',
     description:
-      'Specialized coursework in Machine Learning, Model Training, Computer Vision, Concurrent Programming, Advanced Software Architecture, and Web Technologies.',
+      'Completed specialized coursework in Machine Learning, Model Training, Computer Vision, Concurrent Programming, Advanced Software Architecture, and Web Technologies.',
     tags: ['Model Training', 'Machine Learning', 'Software Engineering', 'Web Technologies'],
   },
   {
