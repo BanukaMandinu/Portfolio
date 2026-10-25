@@ -176,7 +176,7 @@ strong { font-weight: 600; }
 @media (max-width: 900px) {
   .hero { align-items: flex-start; padding-top: 6.5rem; }
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-visual { width: min(78%, 340px); justify-self: start; margin-top: 1rem; }
+  .hero-visual { width: min(80%, 460px); justify-self: center; margin-top: 1.5rem; }
   .badge { right: -22%; width: 104px; height: 104px; }
   .chip { display: none; }
   .runner { left: auto; right: -10%; bottom: -4%; width: 236px; }
