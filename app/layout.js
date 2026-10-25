@@ -32,7 +32,7 @@ export const metadata = {
   title: TITLE,
   description: DESC,
   authors: [{ name: 'Banuka Nanayakkara' }],
-  icons: { icon: '/assets/favicon.svg' },
+  icons: { icon: '/assets/favicon.png', apple: '/assets/favicon.png' },
   openGraph: {
     title: TITLE,
     description: 'Building reliable software with 2+ years of experience in test automation and AI/ML.',
