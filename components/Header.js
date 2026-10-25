@@ -88,6 +88,9 @@ export default function Header() {
         </nav>
 
         <div className="header-actions">
+          <button type="button" className="btn btn-small" data-open-contact>
+            Contact me
+          </button>
           <button
             type="button"
             className="icon-btn"

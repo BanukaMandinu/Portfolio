@@ -1,6 +1,7 @@
 import { Bricolage_Grotesque, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import Header from '@/components/Header';
 import Cursor from '@/components/Cursor';
+import ContactDialog from '@/components/ContactDialog';
 import './globals.css';
 
 const display = Bricolage_Grotesque({
@@ -67,6 +68,7 @@ export default function RootLayout({ children }) {
         <a href="#main" className="skip-link">Skip to main content</a>
         <Header />
         {children}
+        <ContactDialog />
         <Cursor />
       </body>
     </html>

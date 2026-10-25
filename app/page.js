@@ -5,12 +5,13 @@ import Counter from '@/components/Counter';
 import Work from '@/components/Work';
 import Skills from '@/components/Skills';
 import CopyEmail from '@/components/CopyEmail';
+import { CONTACT } from '@/lib/contact';
 import { projects } from '@/data/projects';
 import { experience } from '@/data/experience';
 import { education } from '@/data/education';
 import { skillCategories } from '@/data/skills';
 
-const EMAIL = 'banukananayak@gmail.com';
+const EMAIL = CONTACT.email;
 
 const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/BanukaMandinu' },
@@ -171,6 +172,7 @@ export default function Home() {
 
           <Reveal className="contact-row" delay={100}>
             <a href={`mailto:${EMAIL}`} className="contact-mail" data-hover>{EMAIL}</a>
+            <button type="button" className="btn btn-solid" data-open-contact data-magnetic>Send a message</button>
             <CopyEmail email={EMAIL} />
           </Reveal>
 
