@@ -40,6 +40,7 @@ body {
   overflow-x: hidden;
   transition: background 0.4s, color 0.4s;
 }
+@supports (overflow: clip) { body { overflow-x: clip; } }
 /* film grain */
 body::before {
   content: '';
@@ -202,8 +203,10 @@ strong { font-weight: 600; }
 .sec-sub { margin-top: 1.2rem; color: var(--muted); font-size: 1.15rem; }
 
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.4rem, 3vw, 2.2rem); transition: transform 0.5s var(--ease), border-color 0.3s; }
-.card:hover { transform: translateY(-5px); border-color: var(--ink); }
-.js .card.reveal.in:hover { transform: translateY(-5px); }
+@media (hover: hover) {
+  .card:hover { transform: translateY(-5px); border-color: var(--ink); }
+  .js .card.reveal.in:hover { transform: translateY(-5px); }
+}
 
 /* ───────── About bento ───────── */
 .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
@@ -223,12 +226,13 @@ strong { font-weight: 600; }
   .bento { grid-template-columns: 1fr 1fr; }
   .card-bio { grid-column: 1 / -1; grid-row: auto; }
   .card-stat { grid-column: span 1; }
+  .card-stat > span { min-height: 3.2em; line-height: 1.6; } /* two lines, so both numbers line up */
   .card-now { grid-column: 1 / -1; }
 }
 
 /* ───────── Experience ───────── */
 .stack { display: grid; gap: 1.5rem; }
-.job { position: sticky; top: calc(5.5rem + var(--i) * 1.6rem); display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: clamp(1.2rem, 4vw, 3.5rem); padding: clamp(1.5rem, 4vw, 3rem); background: var(--card); border: 1px solid var(--ink); border-radius: 32px; box-shadow: 0 -18px 40px -24px rgba(0, 0, 0, 0.25); }
+.job { position: sticky; top: min(calc(5.5rem + var(--i) * 1.6rem), var(--fit, 100vh)); display: grid; grid-template-columns: 13rem minmax(0, 1fr); gap: clamp(1.2rem, 4vw, 3.5rem); padding: clamp(1.5rem, 4vw, 3rem); background: var(--card); border: 1px solid var(--ink); border-radius: 32px; box-shadow: 0 -18px 40px -24px rgba(0, 0, 0, 0.25); }
 .job-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 0.8rem; }
 .sec-head.sub { margin: clamp(4rem, 9vw, 7rem) 0 clamp(1.8rem, 4vw, 3rem); }
 .sec-head.sub h2 { font-size: clamp(2rem, 4.6vw, 3.6rem); }
@@ -247,7 +251,7 @@ strong { font-weight: 600; }
 
 
 @media (max-width: 900px) {
-  .job { position: static; grid-template-columns: 1fr; }
+  .job { grid-template-columns: 1fr; top: min(calc(4.8rem + var(--i) * 0.9rem), var(--fit, 100vh)); }
   .job-meta { flex-direction: row; align-items: center; flex-wrap: wrap; }
 }
 

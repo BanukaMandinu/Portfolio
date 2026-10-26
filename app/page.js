@@ -3,6 +3,7 @@ import Marquee from '@/components/Marquee';
 import Reveal from '@/components/Reveal';
 import Counter from '@/components/Counter';
 import Work from '@/components/Work';
+import Stack from '@/components/Stack';
 import Skills from '@/components/Skills';
 import CopyEmail from '@/components/CopyEmail';
 import { CONTACT } from '@/lib/contact';
@@ -29,7 +30,7 @@ const toPoints = (text) =>
 // One card per entry; cards stick and stack as you scroll (see .stack in globals.css).
 function Timeline({ items }) {
   return (
-    <div className="stack">
+    <Stack>
       {items.map((item, i) => {
         const badge = item.status === 'active' ? 'Current' : item.badge;
         return (
@@ -59,7 +60,7 @@ function Timeline({ items }) {
           </article>
         );
       })}
-    </div>
+    </Stack>
   );
 }
 
